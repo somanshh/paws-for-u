@@ -26,10 +26,6 @@ PawsForU is a web application that connects pet lovers with pets in need of a ho
 
 PawsForU is built using the MERN stack (MongoDB, Express.js, React, Node.js).
 
-## **Please Note: This Project Is Designed for Laptop Screens**
-
-Kindly be aware that this project is optimized for laptop screens and is not responsive for mobile or tablet devices. The development of this project was carried out during an internship, and as the internship period has come to an end, further enhancements may not be applied.
-
 ## Installation
 
 Follow these steps to set up the project locally:
@@ -40,18 +36,8 @@ Follow these steps to set up the project locally:
    `npm install`
 4. Create a `.env` file in server with `mongooseURL` variable set to your MongoDB connection URL in the format `mongooseURL=mongodb://username:password@host:port/database_name`.
 5. Run the backend server: `nodemon server`.
-6. `cd client` `npm start` to start front end.
+6. `cd ../client` `npm start` to start front end.
 
 ### Additional Notes
 
 - Ensure you have Node.js and npm installed on your machine.
-
-## Contributing
-
-We welcome contributions to improve PawsForU! To contribute, follow these steps:
-
-- Fork the repository.
-- Create a new branch: git checkout -b feature-new-feature
-- Make your changes and commit them: git commit -m 'Add new feature'
-- Push to the branch: git push origin feature-new-feature
-- Create a pull request explaining your changes.
