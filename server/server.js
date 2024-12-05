@@ -21,6 +21,9 @@ app.use(petRouter)
 app.use('/form', AdoptFormRoute)
 app.use('/admin', AdminRoute)
 
+const userRouter = require('./Routes/UserRoute');
+app.use('/user', userRouter);
+
 mongoose.connect(process.env.mongooseURL)
     .then(() => {
         console.log('Connected to DB');

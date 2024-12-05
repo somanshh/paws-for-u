@@ -23,7 +23,16 @@ const Navbar = (props) => {
             <Link to="/pets">Pets</Link>
           </li>
           <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+          <li>
             <Link to="/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/admin">ADMIN Login</Link>
           </li>
         </ul>
       </div>

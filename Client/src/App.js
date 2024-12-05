@@ -8,6 +8,8 @@ import Contact from "./Components/Contact/Contact";
 import Pets from "./Components/Pets/Pets";
 import AdoptForm from "./Components/AdoptForm/AdoptForm";
 import AdminLogin from "./Components/AdminPanel/AdminLogin";
+import Login from './Components/Auth/Login';
+import Register from './Components/Auth/Register';
 import "./App.css";
 
 const Layout = ({ children }) => (
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/pets" element={<Layout><Pets /></Layout>} />
         <Route path="/adopt-form" element={<Layout><AdoptForm /></Layout>} />
         <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
