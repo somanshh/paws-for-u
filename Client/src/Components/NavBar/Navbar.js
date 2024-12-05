@@ -27,6 +27,7 @@ const Navbar = (props) => {
           <li><Link to="/register" onClick={() => setIsMenuOpen(false)}>Register</Link></li>
           <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
           <li><Link to="/admin" onClick={() => setIsMenuOpen(false)}>ADMIN Login</Link></li>
+          <li><Link to="/boarding">Boarding</Link></li>
         </ul>
       </div>
       

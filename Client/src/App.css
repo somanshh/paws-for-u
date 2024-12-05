@@ -1664,7 +1664,7 @@ body {
   
   .navbar-links {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1722,4 +1722,64 @@ body {
     margin-bottom: 10px;
     text-align: center;
     font-family: "Varela Round", sans-serif;
+  }
+
+  .boarding-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .boarding-header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-strip {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e63946;
+    color: white;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+  }
+  
+  .boarding-content {
+    display: grid;
+    gap: 30px;
+  }
+  
+  .policies-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+  }
+  
+  .admission-policies, .discharge-policies {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .office-hours {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-strip {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  
+    .policies-section {
+      grid-template-columns: 1fr;
+    }
   }

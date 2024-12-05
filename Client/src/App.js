@@ -10,6 +10,7 @@ import AdoptForm from "./Components/AdoptForm/AdoptForm";
 import AdminLogin from "./Components/AdminPanel/AdminLogin";
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
+import BoardingServices from './Components/BoardingServices/BoardingServices';
 import "./App.css";
 
 const Layout = ({ children }) => (
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/boarding" element={<BoardingServices />} />
       </Routes>
     </Router>
   );
