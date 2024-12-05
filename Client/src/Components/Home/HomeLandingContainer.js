@@ -9,27 +9,39 @@ const HomeLandingContainer = (props) => {
     window.scrollTo(0, 0);
   };
   return (
-    <div className="home-container">
+    <div className="home-container container-fluid">
       <div className="homeContainer-left">
         <div>
           <p className="home-title">
             <div className="home-titlePlusPng">
-            <p>Your Pets </p><img src={homepageDog} alt="Dog sitting"/>
+              <p>Your Pets </p>
+              <img
+                src={homepageDog}
+                alt="Dog sitting"
+                className="responsive-img"
+              />
             </div>
             Are Our
             <br />
             Priority
           </p>
-          <p className="home-second-para">
-            {props.description}
-          </p>
+          <p className="home-second-para">{props.description}</p>
         </div>
         <div className="adopt-btn">
-          <Link to='./pets'><button className="Home-button" onClick={scrollToTop}><p>Adopt a Pet</p><img src={footPrint} alt="footprint" /></button></Link>
+          <Link to="./pets">
+            <button className="Home-button" onClick={scrollToTop}>
+              <p>Adopt a Pet</p>
+              <img src={footPrint} alt="footprint" className="responsive-img" />
+            </button>
+          </Link>
         </div>
       </div>
       <div className="homeContainer-right">
-        <img src={girlHoldingADog} alt='Girl holding a Dog'/>
+        <img
+          src={girlHoldingADog}
+          alt="Girl holding a Dog"
+          className="responsive-img"
+        />
       </div>
     </div>
   );

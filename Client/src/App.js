@@ -11,57 +11,24 @@ import AdminLogin from "./Components/AdminPanel/AdminLogin";
 import "./App.css";
 
 const Layout = ({ children }) => (
-  <>
-    <Navbar title="PawsForU" />
-    {children}
-    <Footer title="PawsForU" />
-  </>
+  <div className="container-fluid p-0">
+    <Navbar />
+    <main className="min-vh-100">
+      {children}
+    </main>
+    <Footer />
+  </div>
 );
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home description="Ensure you are fully prepared to provide proper care and attention to your pet before welcoming them into your home." />
-            </Layout>
-          }
-        />
-        <Route
-          path="/services"
-          element={
-            <Layout>
-              <Services />
-            </Layout>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <Layout>
-              <Contact />
-            </Layout>
-          }
-        />
-        <Route
-          path="/pets"
-          element={
-            <Layout>
-              <Pets />
-            </Layout>
-          }
-        />
-        <Route
-          path="/adopt-form"
-          element={
-            <Layout>
-              <AdoptForm />
-            </Layout>
-          }
-        />
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/services" element={<Layout><Services /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/pets" element={<Layout><Pets /></Layout>} />
+        <Route path="/adopt-form" element={<Layout><AdoptForm /></Layout>} />
         <Route path="/admin" element={<AdminLogin />} />
       </Routes>
     </Router>
