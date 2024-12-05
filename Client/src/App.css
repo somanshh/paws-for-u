@@ -116,7 +116,8 @@
 }
 
 .homeContainer-right {
-    padding-left: 40PX;
+    padding-left: 20PX;
+    margin-right: 100px;
     width: 35vw;
     display: flex;
     justify-content: center;
@@ -448,6 +449,7 @@
 
 .homeContainer-left {
     width: 60vw;
+    margin-left: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
