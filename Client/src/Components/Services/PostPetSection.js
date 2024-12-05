@@ -10,6 +10,7 @@ const PostPetSection = () => {
   const [phone, setPhone] = useState("");
   const [formError, setFormError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
   const [ageError, setAgeError] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [type, setType] = useState("None");
@@ -33,6 +34,11 @@ const PostPetSection = () => {
     const emailPattern = /^[a-zA-Z0-9._-]+@gmail\.com$/;
     return emailPattern.test(email);
   };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  }; 
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -62,6 +68,12 @@ const PostPetSection = () => {
 
     if (!isEmailValid(email)) {
       setEmailError(true);
+      return;
+    }
+
+    if (!validatePhone(phone)) {
+      setFormError(true);
+      setPhoneError("Phone number must be exactly 10 digits");
       return;
     }
 
@@ -206,6 +218,9 @@ const PostPetSection = () => {
 
         {emailError && (
           <p className="error-message">Please provide a valid email address.</p>
+        )}
+        {phoneError && (
+          <p className="error-message">Please provide a valid phone number.</p>
         )}
         {formError && (
           <p className="error-message">Please fill out all fields correctly.</p>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import setError from "react";
 
 function AdoptForm(props) {
   const [email, setEmail] = useState("");
@@ -8,6 +9,7 @@ function AdoptForm(props) {
   const [familyComposition, setFamilyComposition] = useState("");
   const [formError, setFormError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
   const [ErrPopup, setErrPopup] = useState(false);
   const [SuccPopup, setSuccPopup] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,9 +19,21 @@ function AdoptForm(props) {
     return emailPattern.test(email);
   };
 
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  };  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setEmailError(false);
+    setFormError(false);
+
+    if (!validatePhone(phoneNo)) {
+      setFormError(true);
+      setPhoneError("Phone number must be exactly 10 digits");
+      return;
+    }
 
     if (
       !email ||
@@ -158,6 +172,9 @@ function AdoptForm(props) {
             </div>
             {formError && (
               <p className="error-message">Please fill out all fields.</p>
+            )}
+            {phoneError && (
+              <p className="error-message">Please provide a valid phone number.</p>
             )}
             <button disabled={isSubmitting} type="submit" className="custom-cta-button custom-m-b">
               {isSubmitting ? 'Submitting' : 'Submit'}

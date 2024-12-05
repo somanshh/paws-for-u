@@ -1641,18 +1641,85 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
+ .navbar-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 35px;
+    position: relative;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links-section {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--orange);
+  }
+  
+  @media (max-width: 1200px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links-section {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+  
+    .nav-links-section.active {
+      display: block;
+    }
+  
     .navbar-links {
-      display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 20px 0;
     }
   
     .navbar-links li {
       margin: 10px 0;
     }
   
-    .navbar-logo {
-      margin: 10px 0;
+    .nav-button-section {
+      margin-left: 20px;
     }
+  }  
+
+  .success-message {
+    color: #4CAF50;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
   }
