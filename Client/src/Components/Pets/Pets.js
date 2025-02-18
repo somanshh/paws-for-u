@@ -9,21 +9,23 @@ const Pets = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await fetch('http://localhost:4000/approvedPets')
+        const response = await fetch(
+          "https://paws-for-u-backend.onrender.com/approvedPets"
+        );
         if (!response.ok) {
-          throw new Error('An error occurred')
+          throw new Error("An error occurred");
         }
-        const data = await response.json()
-        setPetsData(data)
+        const data = await response.json();
+        setPetsData(data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
     fetchRequests();
-  }, [])
+  }, []);
 
   const filteredPets = petsData.filter((pet) => {
     if (filter === "all") {
@@ -49,16 +51,15 @@ const Pets = () => {
         </select>
       </div>
       <div className="pet-container">
-        {loading ?
-          <p>Loading</p> : ((filteredPets.length > 0 ) ? (
-            filteredPets.map((petDetail, index) => (
-              <PetsViewer pet={petDetail} key={index} />
-            ))
-          ) : (
-            <p className="oops-msg">Oops!... No pets available</p>
-          )
-          )
-        }
+        {loading ? (
+          <p>Loading</p>
+        ) : filteredPets.length > 0 ? (
+          filteredPets.map((petDetail, index) => (
+            <PetsViewer pet={petDetail} key={index} />
+          ))
+        ) : (
+          <p className="oops-msg">Oops!... No pets available</p>
+        )}
       </div>
     </>
   );

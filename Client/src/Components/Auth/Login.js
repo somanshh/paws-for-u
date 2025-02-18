@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/user/login', {
+      const response = await axios.post('https://paws-for-u-backend.onrender.com/user/login', {
         email,
         password
       });

@@ -16,7 +16,7 @@ const PostPetSection = () => {
   const [type, setType] = useState("None");
   const [picture, setPicture] = useState(null);
   const [fileName, setFileName] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (!isSubmitting) {
@@ -38,7 +38,7 @@ const PostPetSection = () => {
   const validatePhone = (phone) => {
     const phoneRegex = /^\d{10}$/;
     return phoneRegex.test(phone);
-  }; 
+  };
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -93,10 +93,13 @@ const PostPetSection = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/services", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://paws-for-u-backend.onrender.com/services",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -122,7 +125,6 @@ const PostPetSection = () => {
     }
   };
 
-
   return (
     <section className="post-pet-section">
       <h2>Post a Pet for Adoption</h2>
@@ -143,7 +145,9 @@ const PostPetSection = () => {
           <input
             type="text"
             value={age}
-            onChange={(e) => {setAge(e.target.value);}}
+            onChange={(e) => {
+              setAge(e.target.value);
+            }}
           />
         </div>
 

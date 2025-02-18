@@ -11,14 +11,16 @@ const AdminLogin = () => {
   useEffect(() => {
     const fetchUsersData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/admin/credentials');
+        const response = await fetch(
+          "https://paws-for-u-backend.onrender.com/admin/credentials"
+        );
         if (!response.ok) {
-          throw new Error('Failed to fetch');
+          throw new Error("Failed to fetch");
         }
         const data = await response.json();
         setUsersData(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -26,7 +28,8 @@ const AdminLogin = () => {
   }, []);
 
   const handleLogin = () => {
-    const user = usersData.username === username && usersData.password === password;
+    const user =
+      usersData.username === username && usersData.password === password;
     if (user) {
       setLoginSuccess(true);
       setShowErrorMessage(false);
@@ -49,17 +52,19 @@ const AdminLogin = () => {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              />
+            />
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              />
-              {showErrorMessage && (
-                <p className="error-message">Incorrect username or password</p>
-              )}
-            <button className="float-right" onClick={handleLogin}>Login</button>
+            />
+            {showErrorMessage && (
+              <p className="error-message">Incorrect username or password</p>
+            )}
+            <button className="float-right" onClick={handleLogin}>
+              Login
+            </button>
           </div>
         </div>
       )}
